@@ -1,0 +1,182 @@
+/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/bin/java -XX:TieredStopAtLevel=1 -noverify -Dspring.output.ansi.enabled=always -Dcom.sun.management.jmxremote -Dspring.jmx.enabled=true -Dspring.liveBeansView.mbeanDomain -Dspring.application.admin.enabled=true -javaagent:/Applications/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=62674:/Applications/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/zhouhuizhen/Documents/HelloService/target/classes:/Users/zhouhuizhen/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/Users/zhouhuizhen/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/Users/zhouhuizhen/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-web/2.5.0/spring-boot-starter-web-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter/2.5.0/spring-boot-starter-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot/2.5.0/spring-boot-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/2.5.0/spring-boot-autoconfigure-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-logging/2.5.0/spring-boot-starter-logging-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar:/Users/zhouhuizhen/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar:/Users/zhouhuizhen/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.14.1/log4j-to-slf4j-2.14.1.jar:/Users/zhouhuizhen/.m2/repository/org/apache/logging/log4j/log4j-api/2.14.1/log4j-api-2.14.1.jar:/Users/zhouhuizhen/.m2/repository/org/slf4j/jul-to-slf4j/1.7.30/jul-to-slf4j-1.7.30.jar:/Users/zhouhuizhen/.m2/repository/jakarta/annotation/jakarta.annotation-api/1.3.5/jakarta.annotation-api-1.3.5.jar:/Users/zhouhuizhen/.m2/repository/org/yaml/snakeyaml/1.28/snakeyaml-1.28.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-json/2.5.0/spring-boot-starter-json-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.12.3/jackson-databind-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.3/jackson-core-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.12.3/jackson-datatype-jdk8-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.12.3/jackson-datatype-jsr310-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.12.3/jackson-module-parameter-names-2.12.3.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/2.5.0/spring-boot-starter-tomcat-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/9.0.46/tomcat-embed-core-9.0.46.jar:/Users/zhouhuizhen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/9.0.46/tomcat-embed-el-9.0.46.jar:/Users/zhouhuizhen/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.46/tomcat-embed-websocket-9.0.46.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-web/5.3.7/spring-web-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-beans/5.3.7/spring-beans-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-webmvc/5.3.7/spring-webmvc-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-aop/5.3.7/spring-aop-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-context/5.3.7/spring-context-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-expression/5.3.7/spring-expression-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/slf4j/slf4j-api/1.7.30/slf4j-api-1.7.30.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-core/5.3.7/spring-core-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-jcl/5.3.7/spring-jcl-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-thymeleaf/2.5.0/spring-boot-starter-thymeleaf-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/thymeleaf/thymeleaf-spring5/3.0.12.RELEASE/thymeleaf-spring5-3.0.12.RELEASE.jar:/Users/zhouhuizhen/.m2/repository/org/thymeleaf/thymeleaf/3.0.12.RELEASE/thymeleaf-3.0.12.RELEASE.jar:/Users/zhouhuizhen/.m2/repository/org/attoparser/attoparser/2.0.5.RELEASE/attoparser-2.0.5.RELEASE.jar:/Users/zhouhuizhen/.m2/repository/org/unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar:/Users/zhouhuizhen/.m2/repository/org/thymeleaf/extras/thymeleaf-extras-java8time/3.0.4.RELEASE/thymeleaf-extras-java8time-3.0.4.RELEASE.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-freemarker/2.5.0/spring-boot-starter-freemarker-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/org/freemarker/freemarker/2.3.31/freemarker-2.3.31.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-context-support/5.3.7/spring-context-support-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/2.5.0/spring-boot-starter-jdbc-2.5.0.jar:/Users/zhouhuizhen/.m2/repository/com/zaxxer/HikariCP/4.0.3/HikariCP-4.0.3.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-jdbc/5.3.7/spring-jdbc-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/org/springframework/spring-tx/5.3.7/spring-tx-5.3.7.jar:/Users/zhouhuizhen/.m2/repository/mysql/mysql-connector-java/8.0.23/mysql-connector-java-8.0.23.jar:/Users/zhouhuizhen/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-starter/2.1.0/mybatis-spring-boot-starter-2.1.0.jar:/Users/zhouhuizhen/.m2/repository/org/mybatis/spring/boot/mybatis-spring-boot-autoconfigure/2.1.0/mybatis-spring-boot-autoconfigure-2.1.0.jar:/Users/zhouhuizhen/.m2/repository/org/mybatis/mybatis/3.5.2/mybatis-3.5.2.jar:/Users/zhouhuizhen/.m2/repository/org/mybatis/mybatis-spring/2.0.2/mybatis-spring-2.0.2.jar:/Users/zhouhuizhen/.m2/repository/net/gplatform/Sdk4J/2.0/Sdk4J-2.0.jar com.example.demo.DemoApplication
+Java HotSpot(TM) 64-Bit Server VM warning: Options -Xverify:none and -noverify were deprecated in JDK 13 and will likely be removed in a future release.
+<!DOCTYPE html>
+<html lang="en" xmlns:v-touch="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="shortcut icon" href="https://www.ip.cn/img/favicon.ico" type="image/x-icon"></link>
+  <meta charset="UTF-8">
+  <title>IP.cn - IP 地址查询 | 地理位置 | 手机归属地  | DNS查询 </title> 
+  <meta name="robots" content="all" />
+  <meta name="bytedance-verification-code" content="hKpp9OM7LMNwV6Un+qXi" />
+  <meta name="sogou_site_verification" content="RqGDHiOyfY"/>
+  <meta name="baidu-site-verification" content="code-c9Lkt7cHNQ" />
+  <meta name="360-site-verification" content="3a275f2dbf3e3702e75703bdf5e2c286" />
+  <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+  <meta data-n-head="true" data-hid="keywords" name="keywords" content="ip,ip查询,手机ip,本机ip,我的ip,外网ip,ip地址查询,手机号,归属地"/>
+  <meta data-n-head="true" data-hid="description"  name="description" content="专业提供ip查询、本机 IP、手机 IP,我的ip、地理位置查询、IP数据库、手机号归属地查询、在线转换、在线计算、天气预报、垃圾分类、汇率查询等工具。"/>
+    <script>
+        function calculateSize () {
+            var clientWidth = window.innerWidth || document.documentElement.clientWidth;
+            if (clientWidth>650) {
+                clientWidth = 650;
+            }
+            var htmlSize = clientWidth/7.5;
+            document.documentElement.style.fontSize = htmlSize + 'px';
+        }
+        calculateSize();
+        window.addEventListener('resize', calculateSize);
+    </script>
+     <link href="https://www.layuicdn.com/layui/css/layui.css" rel="stylesheet"></link>
+      <link href="https://www.ip.cn/css/front/common.css?v=20200829" rel="stylesheet"></link>
+</head>
+<body style="background-color: #F2F2F2;">
+    <ul class="layui-nav" style="width:7.5rem;padding: 0px;margin: auto;">
+     <li class="layui-nav-item">  < a href=" " style="color: #fff;">IP.cn 查询网 | IP查询</ a></li>
+  <li class="layui-nav-item" >
+     < a href="javascript:;">功能大全</ a>
+     <dl class="layui-nav-child">
+       <dd class="layui-this">< a href="/">IP查询</ a></dd>
+       <dd>< a href="/db" >手机电话归属查询</ a></dd>
+       <dd>< a href="/qiang.html">域名被墙查询</ a></dd>
+       <dd>< a href="/beian.html">域名备案查询</ a></dd>
+       <dd>< a href="/whois.html" >whois查询工具</ a></dd>
+       <dd>< a href="/shenfenzheng.html">身份证号查询</ a></dd>
+       <dd>< a href="/kd.html"  >快递信息查询</ a></dd>
+       <dd>< a href="/huilv.html" >汇率信息查询</ a></dd>
+       <dd>< a href="/daishou.html"  >火车票代售点查询</ a></dd>
+       <dd>< a href="/qishoudian.html">列车时刻查询</ a></dd>
+   <dd>< a href="/caipiao/index.html">彩票开奖查询</ a></dd>
+   <dd>< a href="/tiyu/index.html">体育比赛查询</ a></dd>
+     </dl>
+   </li>
+  </ul>
+
+    <div class="page_nav">
+            <div class="page_nav_wrap">
+             <div class="pn_item nav_gray ">
+                           < a href="/" class="active">IP信息查询</ a>
+                      </div>
+             <div class="pn_item nav_gray"  >
+                < a href="/db" >手机电话归属查询</ a>
+             </div>
+             <div class="pn_item nav_gray" >
+              < a href="/dns.html" >DNS查询</ a>
+             </div>
+             <div class="pn_item nav_gray" >
+               < a href="/chnroutes.html"  >IP列表查询</ a> 
+             </div>
+          </div>
+    </div>
+    
+   <div class="ip_box" >
+       <input type="text" id="ip" name="ip" placeholder="请输入要查询的IP或者域名"
+        onkeyup = "validateValue(this)"
+        autocomplete="off"  style="width:50%;"  value="45.35.77.83">
+          <button class="select_btn" onclick="search()">查询</button>
+  </div>
+  
+   <div class="layui-card ip_card"  >
+   <div class="layui-card-header ">您的IP信息</div>
+   <div class="layui-card-body">
+        <table class="layui-table"  >
+              <tbody>
+                <tr >
+                   <td  style="width:120px;">
+                   <span   >  您查询的IP：</span>
+                   </td>
+                  <th style="font-weight: bolder;" >
+                    <div >45.35.77.83</div>
+                  </th >
+                </tr>
+                 <tr>
+                   <td  style="width:120px;">所在地理位置：</td>
+                  <th style="font-weight: bolder;" >
+                   <div id="tab0_address">美国  加利福尼亚  </div>
+                  </th >
+                </tr>
+                 </tbody>
+           </table>
+   </div>
+ </div>
+     
+     <div class="layui-card ip_card"  >
+   <div class="com-service">
+     <div class="footer-nav">
+   <ul>
+   <li>< a href="/changdu.html" >在线转换</ a></li>
+   <li>< a href="/selfcalc.html" >在线计算</ a></li>
+   <li>< a href="/tianqi.html"  >天气预报查询</ a></li>
+   <li>< a href="/laji.html"  >垃圾分类查询</ a></li>
+   <li>< a href="/fanyi.html" >万能翻译</ a></li>
+    <li>< a href="/huilv.html" >汇率信息查询</ a></li>
+    <li>< a href="/md5.html" >加密解密</ a></li>
+     <li>< a href="/createPwd.html" >随机密码</ a></li>
+    <li>< a href="/xingzuo.html" >生活工具</ a></li>
+    <li>< a href="/chehao_index.html" >车牌号查询</ a></li>
+     <li>< a href="/caipiao/index.html">彩票开奖查询</ a></li> 
+       <li>< a href="/tiyu/index.html" >体育比赛查询</ a></li> 
+   </ul>
+  </div>
+     </div>
+     </div>
+  <div class="footer">
+ <p>2006-2020  厦门时空科技有限公司 版权所有</p >
+ <p>闽ICP备20013833号-1</p >
+ </div>
+ 
+     <span style="display:none">
+ <script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278852728&web_id=1278852728"></script>
+ <script type="text/javascript" src="//js.users.51.la/20765349.js"></script>
+ <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+ <script>
+ LA.init({
+     id: "1vGn5KEyNxI88WjH",
+     ck: "1vGn5KEyNxI88WjH"
+ })
+ </script>
+ </span> 
+ 
+     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://www.layuicdn.com/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+  <script>
+ layui.use('element', function(){
+   var element = layui.element;  
+ });
+ (function(){
+  var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+  document.write('<script src="' + src + '" id="sozz"><\/script>');
+  })();
+ 
+ (function(){
+  var el = document.createElement("script");
+  el.src = "https://sf1-scmcdn-tos.pstatp.com/goofy/ttzz/push.js?6e866a84be1914bfef983805ae36d3bc891642a32730d39ed0a1018b4e43b41802d5321cc01a4a08b8cda038ed0447fcebd233576998ef6224ea5787cad5f593";
+  el.id = "ttzz";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(el, s);
+  })()
+ </script>
+     <script>
+     function search(){
+      var ip=$("#ip").val();
+      window.location.href='/ip/'+ip+'.html'
+      
+     }
+  
+     function validateValue(textbox) {
+   var IllegalString = "[`~!#$^&*()=|{}':;',\\[\\]<>/?~！#￥……&*（）——|{}【】‘；：”“'。，、？]‘’";
+   var textboxvalue = textbox.value;
+   var index = textboxvalue.length - 1;
+  
+   var s = textbox.value.charAt(index);
+  
+   if (IllegalString.indexOf(s) >= 0) {
+    s = textboxvalue.substring(0, index);
+    textbox.value = s;
+   }
+  
+  }  
+ </script>
+</body>
+</html>
+
+Process finished with exit code 0

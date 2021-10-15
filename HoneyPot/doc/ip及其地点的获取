@@ -1,0 +1,102 @@
+## ip的获取
+
+当我们通过HttpServletRequest request获取客户端IP时，自身服务器通常会为了保护信息或者负载均衡的目的，对自身服务器做反向代理。此时如果我们通过request.getRemoteAddr();可能获取到的是自身代理服务器的IP，而无法达到获取用户请求ip的目的。了解了这一原来，我们对进行代理的服务器进行分类判断
+
+X-Forwarded-For：Squid 服务代理
+
+Proxy-Client-IP：apache 服务代理
+
+WL-Proxy-Client-IP：weblogic 服务代理
+
+HTTP_CLIENT_IP：有些代理服务器
+
+X-Real-IP：nginx服务代理
+
+![img](https://tva1.sinaimg.cn/large/008i3skNly1gs9n3nxh9wj31a809wjvl.jpg) 
+
+整理各个代理服务器自己开发的转发服务请求头，这些请求头都不是标准的http请求头，不一定所有的代理都会带上这些请求头，所以通过这方式只能尽可能的获取到真实的ip地址。
+
+ 
+
+再通过编写的Write类中的WriteToMyText()方法，创建输入输出流并调用writ()方法写入数据
+
+将获得的ip地址用户注册、登录，管理员后台登录、上传商品信息等操作产生的数据信息分别写入到指定的txt文件中
+
+![img](https://tva1.sinaimg.cn/large/008i3skNly1gs9n3od343j31a80bs43y.jpg) 
+
+ 
+
+![img](https://tva1.sinaimg.cn/large/008i3skNly1gs9n3nee2oj31a80fwdnd.jpg) 
+
+ 
+
+
+
+## ip地址的地点获取
+
+地点的获取用到了爬虫技术，Java核心爬虫代码如下（我们爬取的网站是www.ip.cn/ip/）
+
+```java
+package com.example.demo.demo;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Scanner;
+
+public class get_ip_detail {
+    public static void place(String ip) throws IOException {
+        URL url = new URL("https://www.ip.cn/ip/" + ip + ".html");
+        HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
+        httpConn.setRequestMethod("GET");
+
+        httpConn.setRequestProperty("authority", "www.ip.cn");
+        httpConn.setRequestProperty("sec-ch-ua", "\" Not;A Brand\";v=\"99\", \"Google Chrome\";v=\"91\", \"Chromium\";v=\"91\"");
+        httpConn.setRequestProperty("sec-ch-ua-mobile", "?0");
+        httpConn.setRequestProperty("upgrade-insecure-requests", "1");
+        httpConn.setRequestProperty("user-agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36");
+        httpConn.setRequestProperty("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+        httpConn.setRequestProperty("sec-fetch-site", "none");
+        httpConn.setRequestProperty("sec-fetch-mode", "navigate");
+        httpConn.setRequestProperty("sec-fetch-user", "?1");
+        httpConn.setRequestProperty("sec-fetch-dest", "document");
+        httpConn.setRequestProperty("accept-language", "en-US,en;q=0.9");
+
+        InputStream responseStream = httpConn.getResponseCode() / 100 == 2
+                ? httpConn.getInputStream()
+                : httpConn.getErrorStream();
+        Scanner s = new Scanner(responseStream).useDelimiter("\\A");
+        String response = s.hasNext() ? s.next() : "";
+        System.out.println(response);
+
+    }
+}
+```
+
+爬取结果（整个网页）：
+
+![image-20210711185955551](https://tva1.sinaimg.cn/large/008i3skNly1gsd7odw0pcj61c00u0du802.jpg)
+
+用正则表达式进行过滤，只需要得到它的地点即可
+
+```java
+public static String filter(String text) throws IOException {
+        String s = null;
+        System.out.println(text);
+        BufferedReader br = new BufferedReader(new InputStreamReader(new ByteArrayInputStream(text.getBytes(Charset.forName("utf8"))), Charset.forName("utf8")));
+        while((s = br.readLine()) != null) {
+            String start = " <div id=\"tab0_address\">", end = "</div>";
+            String patern = "(?<=\\" + start + ")[^\\" + end + "]+";
+            Pattern pattern = Pattern.compile(patern);
+            Matcher matcher = pattern.matcher(s);
+            while (matcher.find()) {
+                return matcher.group();
+                System.out.println(matcher.group());
+            }
+        }
+```
+
+过滤结果：
+
+![image-20210711185903631](https://tva1.sinaimg.cn/large/008i3skNly1gsd7nj8xwqj31c00u0dv2.jpg)

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>错误页面</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <!--js方法	未登录状态下转到登录页面-->
+    <script type="text/javascript" th:inline="javascript">
+
+        var pathName = window.document.location.pathname;
+        //截取，得到项目名称
+        var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+        window.location.href = projectName + "/user/login";
+
+    </script>
+
+</head>
+<body>
+<!--	<div class="panel panel-primary">-->
+<!--		<div class="panel-heading">-->
+<!--			<h3 class="panel-title">异常处理页面</h3>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	<div class="container">-->
+<!--		<div>-->
+<!--&lt;!&ndash;			<h3><span th:text="${mymessage}"></span></h3><br><br>&ndash;&gt;-->
+<!--&lt;!&ndash;			<a href="javascript:history.back()">返回</a>&ndash;&gt;-->
+<!--			-->
+<!--		</div>-->
+<!--	</div>-->
+</body>
+</html>

