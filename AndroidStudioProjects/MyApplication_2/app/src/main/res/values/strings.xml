@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application_2</string>
+    <string name="username">用户名</string>
+    <style name="styleName">提示</style>
+    <string name="psw">密码</string>
+    <string name="用户名提示">请输入您的用户名</string>
+</resources>
